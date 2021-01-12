@@ -29,13 +29,27 @@
     <!-- JS Plugins -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script> -->
 </head>
 <body>
-    <div id="term" class="term nerd">{{ text }}</div>
+    <div id="term" class="term nerd">
+        <span v-html="text"></span>
+    </div>
+
     <div id="page" hidden>
-        rest of the page
+        <section id="root">
+            <navbar></navbar>
+
+            <p>rest of the page</p>
+        </section>
+        <section id=""></section>
+
+        <div style="height: 1000px"></div>
+        <p>footer</p>
     </div>
 </body>
-    <script src="term.vue.js"></script>
+    <script src="vue/term.vue.js"></script>
+    <script src="vue/navbar.vue.js"></script>
 </html>
