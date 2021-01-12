@@ -1,0 +1,306 @@
+$color-1: #00c194;
+$color-2: #0078a8;
+$color-3: #d3ede4;
+$color-4: #14020c;
+$color-5: #990028;
+$bg-color-1: #e6e6e6;
+$bg-color-2: #c4c4c4;
+$bg-color-3: #383838;
+$bg-color-4: #141414;
+$main-bg-color: $bg-color-1;
+$off-bg-color: $bg-color-2;
+$font-color: #000;
+
+html body {
+    border-collapse: collapse;
+    color: $font-color;
+    font-family: "Poppins";
+    margin-top: 16px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    width: auto;
+}
+
+section {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    margin-top: 32px;
+    padding-top: 32px;
+    padding-bottom: -10px;
+    text-align: center;
+}
+
+p {
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+
+.nf {
+    font-family: "Roboto Mono Nerd";
+}
+
+.div {
+    display: inline-block;
+    padding:0;
+    margin:0;
+}
+
+.center {
+    text-align: center;
+}
+
+::selection {
+    background: $color-4;
+    color: $color-3;
+}
+
+.navbar {
+    background-image: linear-gradient(90deg, $color-1, $color-2);
+    border-bottom-style: solid;
+    border-color: $color-3;
+    border-width: thin;
+    opacity: 1;
+}
+
+.navbar:hover {
+    opacity: 1;
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar a:hover {
+    color: $color-4;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    opacity: 1;
+}
+
+.head-space {
+    background-image: linear-gradient(90deg, $color-1, $color-2);
+    height: 64px;
+}
+
+.home {
+    background-image: linear-gradient(90deg, $color-1, $color-2);
+    height: auto;
+    color: #fff;
+}
+
+.home h1 {
+    font-size: 100;
+    font-weight: 800;
+    padding: 0px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.home h2 {
+    font-size: 70;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: -5px;
+}
+
+.home img {
+    float: right;
+    max-height: 800px;
+    padding-top: 56px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+
+.home button {
+    box-shadow: 0px 1px 2px 0px rgba(90, 91, 95, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+.home button:hover {
+    background-color: $color-3;
+    box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 991px) {
+  .home h1 {
+      font-size: 5vw;
+      text-align: center;
+  }
+  .home h2 {
+      font-size: 4vw;
+      text-align: center;
+  }
+  .home img {
+      display: block;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0px;
+      padding-bottom: 1vh;
+      width: 50%;
+  }
+  .home button {
+      display: block;
+      font-size: 2vw;
+      margin: auto;
+      margin-bottom: 20px;
+  }
+}
+
+.about {
+    background-color: $main-bg-color;
+    height: 300px;
+}
+
+.education {
+    background-color: $off-bg-color;
+    height: 300px;
+}
+
+.experience {
+    background-color: $main-bg-color;
+    height: 300px;
+}
+
+.skills {
+    background-color: $off-bg-color;
+    height: 300px;
+}
+
+.portfolio {
+    background-color: $main-bg-color;
+    height: 300px;
+}
+
+.contact {
+    background-color: $off-bg-color;
+    padding-bottom: 15px;
+}
+
+.contact a {
+    color: $color-1;
+    text-align: center;
+}
+
+.contact a:hover {
+    color: $color-2;
+    text-align: center;
+}
+
+.contact form:focus {
+    border-color: aqua;
+}
+
+.contact input {
+    margin: 2px;
+    padding: 4px;
+}
+
+.contact textarea {
+    margin: 2px;
+    padding: 4px;
+    resize: none;
+    width: 650px;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact textarea {
+        max-width: 86%;
+    }
+}
+
+.footer {
+    background-color: $color-4;
+    color: $bg-color-2;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer p {
+    font-size: small;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer {
+        padding-bottom: 86px;
+    }
+}
+
+.footer a {
+    color: $color-1;
+    text-align: center;
+}
+
+.footer a:hover {
+    color: $color-2;
+    text-align: center;
+}
+
+.seperator {
+    display: flex;
+    justify-content: center;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: $color-1;
+    border-radius: 100%;
+    display: inline-block;
+    /* margin: 0px 10px; */
+    text-align: center;
+    line-height: 67px;
+    vertical-align: middle;
+}
+
+.sm{
+    height: 30px;
+    width: 30px;
+    background-color: $color-2;
+    /* margin: 10px 10px; */
+}
+
+.xs{
+    height: 10px;
+    width: 10px;
+    /* margin: 20px 10px; */
+}
+
+.float-button {
+    height: 50px;
+    width: 50px;
+    background-color: $color-1;
+    border-radius: 100%;
+    position: fixed;
+    text-align: center;
+    box-shadow: 0px 1px 2px 0px rgba(90, 91, 95, 0.15);
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+    -webkit-user-select: none;
+}
+
+.float-button:hover,
+.float-button:focus {
+    background-color: $color-2;
+    color: #ffffff;
+    box-shadow: 0px 16px 22px 0px rgba(90, 91, 95, 0.3);
+}
+
+.scroll-to-top {
+    right: 30px;
+    bottom: 30px;
+}
+
+.dark-mode {
+    right: 100px;
+    bottom: 30px;
+}

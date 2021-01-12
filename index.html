@@ -1,9 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Jeremy Meadows</title>
-    </head>
-    <body>
-        <p>hi</p>
-    </body>
+<html lang="en">
+<head>
+    <title>Jeremy Meadows</title>
+
+    <!-- Meta Tags & SEO -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Jeremy Meadows">
+    <meta name="description" content="150 words">
+    <meta name="url" content="jmeadows.xyz">
+    <meta name="keywords" content="Jeremy Meadows, Jeremy, Meadows, intern, CS intern, Baylor intern, computer science, internship">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Progressive Web App Manifest -->
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <!-- Favicon -->
+    <link rel="icon shortcut" type="image/x-icon" href="img/jeremy.ico">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="img/jeremy.ico">
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="fonts/poppins.css">
+    <link rel="stylesheet" type="text/css" href="fonts/robotoMonoNerd.css">
+
+    <!-- JS Plugins -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="term" class="term nerd">{{ text }}</div>
+    <div id="page" hidden>
+        rest of the page
+    </div>
+</body>
+    <script src="term.vue.js"></script>
 </html>
