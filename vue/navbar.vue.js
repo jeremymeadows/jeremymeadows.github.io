@@ -17,8 +17,8 @@ Vue.component('navbar', {
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li v-for="page in pages" class="nav-item">
-                        <a v-if="page===highlighted" v-on:mouseout="leave" class="nav-link" href="#">[{{ page }}]</a>
-                        <a v-else v-on:mouseover="enter(page)" class="nav-link" href="#">&nbsp{{ page }}&nbsp</a>
+                        <a v-if="page===highlighted" v-on:mouseout="leave" class="nav-link" :href="'#'+page">[{{ page }}]</a>
+                        <a v-else v-on:mouseover="enter(page)" class="nav-link" :href="'#'+page">&nbsp{{ page }}&nbsp</a>
                     </li>
                 </ul>
             </div>
@@ -29,9 +29,10 @@ Vue.component('navbar', {
             title: "Jeremy Meadows",
             hover: false,
             pages: [
-                'home',
                 'about_me',
                 'education',
+                'skills',
+                'projects',
             ],
             highlighted: '',
             lights: false,

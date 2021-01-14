@@ -7,6 +7,7 @@
     --32: #00ff22;
     --33: #e8e800;
     --34: #0022ff;
+    scroll-behavior: smooth;
 }
 
 html body {
@@ -37,12 +38,12 @@ a, a.navbar-brand, a.nav-link {
     color: var(--32) !important;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+section {
     margin-left: 5vw;
     margin-right: 5vw;
 }
 @media only screen and (min-width: 600px) {
-    h1, h2, h3, h4, h5, h6, p {
+    section {
         margin-left: 20vw;
         margin-right: 20vw;
     }
@@ -91,8 +92,20 @@ button.btn-outline:focus {
 }
 
 ::selection {
-    /* background-color: #000;
-    color: #fff; */
+    background-color: #000;
+    color: #fff;
+}
+
+.progress {
+    background-color: var(--bg) !important;
+    border: 1px solid var(--32) !important;
+    color: var(--bg);
+    height: .75em !important;
+    /* margin-left: 20vw; */
+    /* margin-right: 20vw; */
+}
+.progress-bar {
+    background-color: var(--32) !important;
 }
 
 .switch {

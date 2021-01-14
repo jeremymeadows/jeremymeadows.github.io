@@ -36,13 +36,11 @@ var term = new Vue({
                 await sleep(100 * (1/this.speed));
                 this.text += this.prompt;
             }
-            await sleep(500 * (1/this.speed));
 
-            document.getElementById("term").hidden = true;
-            await sleep(500 * (1/this.speed));
-            document.getElementById("term").hidden = false;
+            await sleep(200 * (1/this.speed));
             document.getElementById("page").hidden = false;
-            window.location = '#root';
+            await sleep(200 * (1/this.speed));
+            window.location = '#about_me';
         },
         show: function() {
             this.text = this.prompt;
@@ -50,7 +48,7 @@ var term = new Vue({
                 this.text += this.commands[i] + "\n" + this.responses[i] + this.prompt;
             }
             document.getElementById("page").hidden = false;
-            window.location = '#root';
+            window.location = '#about_me';
         },
         setCookie: function(auto) {
             document.cookie = 'term_animation=' + auto + ';';
