@@ -4,21 +4,34 @@
     let active = "home";
 
     function set_active(el: Element) {
-        Array.from(document.getElementsByClassName('navbar-item')).forEach(
-            (e) => {
-                if (e === el) {
-                    e.classList.add('is-active');
-                } else {
-                    if (e.classList.contains('is-active')) {
-                        e.classList.remove('is-active');
-                        e.innerHTML = `&nbsp;${e.innerHTML.slice(1, -1)}&nbsp;`;
-                    }
+        Array.from(document.getElementsByClassName('navbar-item')).forEach(e => {
+            if (e === el) {
+                e.classList.add('is-active');
+            } else {
+                if (e.classList.contains('is-active')) {
+                    e.classList.remove('is-active');
+                    e.innerHTML = `&nbsp;${e.innerHTML.slice(1, -1)}&nbsp;`;
                 }
             }
-        );
+        });
     }
 
     onMount(async () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Add a click event on each of them
+        Array.from(document.getElementsByClassName('navbar-burger')).forEach(e => {
+            e.addEventListener('click', () => {
+                // Get the target from the "data-target" attribute
+                const target = e.getAttribute('data-target');
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                e.classList.toggle('is-active');
+                document.getElementById(target!)?.classList.toggle('is-active');
+            });
+        });
+
         Array.from(document.getElementsByClassName('navbar-item')).forEach(
             (e) => {
                 e.innerHTML = `&nbsp;${e.innerHTML}&nbsp;`;
@@ -44,6 +57,17 @@
         );
     });
 </script>
+
+<svelte:head>
+    <title>Jeremy Meadows</title>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Jeremy Meadows">
+    <meta name="description" content="150 words">
+    <meta name="url" content="jeremymeadows.xyz">
+    <meta name="keywords" content="Jeremy Meadows, Jeremy, Meadows">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</svelte:head>
 
 <nav class="navbar is-fixed-top has-shadow" aria-label="main navigation">
     <div class="navbar-brand">
@@ -81,7 +105,8 @@
 <div style="height: 64px"/>
 
 <style lang="scss">
-    $navbar-item-hover-background-color: #00000000;
+    $navbar-breakpoint: 700px;
+    $navbar-item-hover-background-color: #0000;
 
     @import '../style.scss';
 
@@ -90,6 +115,12 @@
     nav {
         margin: -8px;
         padding: 8px 8px 0 8px;
+    }
+    @media (min-width: 1200px) {
+        nav {
+            padding-left: calc((100vw - 1200px) / 2);
+            padding-right: calc((100vw - 1200px) / 2);
+        }
     }
 
     .navbar-item {

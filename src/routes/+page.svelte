@@ -15,21 +15,21 @@
 <div style="height: 16px" />
 
 <div class="center">
-    <a href="https://github.com/jeremymeadows" title="GitHub">
+    <a href="https://github.com/jeremymeadows" title="GitHub" target="blank">
         <button class="button is-primary is-outlined">
             <span class="icon nerd"></span>
         </button>
     </a>
-    <a href="https://stackoverflow.com/users/13843935/jeremy-meadows" title="Stack Overflow">
+    <a href="https://stackoverflow.com/users/13843935/jeremy-meadows" title="Stack Overflow" target="blank">
         <button class="button is-primary is-outlined">
             <span class="icon nerd"></span>
         </button>
     </a>
-    <!-- <a href="/static/resume.pdf">
+    <a href="/resume.pdf" target="blank">
         <button class="button is-primary is-outlined nerd">
             <span class="nerd"></span>&nbsp; resume
         </button>
-    </a> -->
+    </a>
 </div>
 
 <div style="height: 32px" />

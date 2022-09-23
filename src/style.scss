@@ -20,7 +20,7 @@ $button-padding-horizontal: 0.5rem;
 
     @font-face {
         font-family: "Roboto Mono Nerd";
-        src: url('/src/fonts/Roboto-Mono-NerdFont.woff');
+        src: url('/fonts/Roboto-Mono-NerdFont.woff');
     }
 
     html {
@@ -34,10 +34,8 @@ $button-padding-horizontal: 0.5rem;
         margin: auto;
         padding: 0 5% 0 5%;
     }
-
     @media (min-width: 1300px) {
         body {
-            margin: auto;
             max-width: 1200px;
         }
     }
@@ -51,12 +49,17 @@ $button-padding-horizontal: 0.5rem;
     }
 
     h1 {
+        font-family: 'Roboto Mono';
         font-size: 2rem !important;
         text-align: center;
     }
 
     button {
         font-family: 'Poppins', sans-serif;
+    }
+    button:hover {
+        background-color: $white !important;
+        color: $black !important;
     }
 
     .center {
