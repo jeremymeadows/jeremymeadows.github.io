@@ -1,5 +1,8 @@
+<script lang="ts">
+</script>
+
 <img
-    src="https://jeremymeadows.github.io/img/pic.jpg"
+    src="/pic.jpg"
     alt=""
     class="center circle"
     style="max-width: 200px"
@@ -7,10 +10,7 @@
 
 <div style="height: 16px" />
 
-<h1>Welcome to SvelteKit</h1>
-<p class="center">
-    Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<h1>Hi, I'm Jeremy &colon;&rpar;</h1>
 
 <div style="height: 16px" />
 
@@ -25,7 +25,7 @@
             <span class="icon nerd"></span>
         </button>
     </a>
-    <a href="/resume.pdf" target="blank">
+    <a href="/resume_web.pdf" target="blank">
         <button class="button is-primary is-outlined nerd">
             <span class="nerd"></span>&nbsp; resume
         </button>
