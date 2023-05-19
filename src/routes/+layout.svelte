@@ -1,46 +1,31 @@
 <script lang="ts">
-    import Navbar from '$lib/components/Navbar.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+  import Navbar from "$lib/components/Navbar.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+
+  import '/src/global.scss';
 </script>
 
 <svelte:head>
-    <title>Jeremy Meadows</title>
+  <title>Jeremy Meadows</title>
 
-    <meta charset="UTF-8">
-    <meta name="author" content="Jeremy Meadows">
-    <meta name="description" content="150 words">
-    <meta name="url" content="jeremymeadows.github.io">
-    <meta name="keywords" content="Jeremy Meadows, Jeremy, Meadows">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Jeremy Meadows" />
+  <meta name="description" content="150 words" />
+  <meta name="url" content="jeremymeadows.github.io" />
+  <meta name="keywords" content="Jeremy Meadows, Jeremy, Meadows" />
 </svelte:head>
 
-<Navbar/>
+<Navbar />
 
-<slot/>
+<main>
+  <slot />
+</main>
 
-<div id="spacer" height="0"/>
-
-<Footer/>
+<Footer />
 
 <style lang="scss">
-    $navbar-breakpoint: 700px;
-    $navbar-item-hover-background-color: #0000;
-
-    @import '../style.scss';
-
-    nav {
-        margin: -8px;
-        padding: 8px 8px 0 8px;
-    }
-    @media (min-width: 1200px) {
-        nav {
-            padding-left: calc((100vw - 1200px) / 2);
-            padding-right: calc((100vw - 1200px) / 2);
-        }
-    }
-
-    .navbar-item {
-        color: $link;
-        font-family: 'Roboto Mono', monospace;
-    }
+  main {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    min-height: calc(100vh - 4rem + 3px);
+  }
 </style>

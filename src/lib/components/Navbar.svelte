@@ -1,119 +1,116 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+  import { onMount } from "svelte";
+  import { navigating } from "$app/stores";
 
-    onMount(async () => {
-        let menu = document.getElementById('burger-menu')!;
-        menu.addEventListener('click', () => {
-            menu.classList.toggle('is-active');
-            document
-                .getElementById(menu.getAttribute('data-target')!)!
-                .classList
-                .toggle('is-active');
-        });
+  import DarkMode from "./DarkMode.svelte";
 
-        Array.from(document.getElementsByClassName('navbar-item')).forEach(
-            (e) => {
-                if (window.location.pathname === e.getAttribute('href')) {
-                    e.classList.add('is-active');
-                    e.innerHTML = `[${e.getAttribute('data-display')}]`;
-                } else {
-                    e.innerHTML = `&nbsp;${e.getAttribute(
-                        'data-display'
-                    )}&nbsp;`;
-                }
+  const pages = {
+    about_me: "/about",
+    education: "/education",
+    work_experience: "/work_experience",
+    projects: "/projects",
+  };
 
-                e.addEventListener('mouseenter', () => {
-                    if (!e.classList.contains('is-active')) {
-                        e.innerHTML = `[${e.getAttribute('data-display')}]`;
-                    }
-                });
-                e.addEventListener('mouseleave', () => {
-                    if (!e.classList.contains('is-active')) {
-                        e.innerHTML = `&nbsp;${e.getAttribute(
-                            'data-display'
-                        )}&nbsp;`;
-                    }
-                });
-
-                e.addEventListener('click', () => {
-                    e.classList.add('is-active');
-                    e.innerHTML = `[${e.getAttribute('data-display')}]`;
-
-                    Array.from(
-                        document.getElementsByClassName('navbar-item')
-                    ).forEach((el) => {
-                        if (el !== e) {
-                            if (el.classList.contains('is-active')) {
-                                el.classList.remove('is-active');
-                            }
-                            el.innerHTML = `&nbsp;${el.getAttribute(
-                                'data-display'
-                            )}&nbsp;`;
-                        }
-                    });
-                });
-            }
-        );
+  onMount(async () => {
+    const menu = document.getElementById("burger-menu")!;
+    menu.addEventListener("click", () => {
+      menu.classList.toggle("is-active");
+      document
+        .getElementById(menu.getAttribute("data-target")!)!
+        .classList.toggle("is-active");
     });
+
+    document
+      .querySelector(`.navbar-item[href='${document.location.pathname}']`)
+      ?.classList.add("is-current-page");
+  });
+
+  $: if ($navigating) {
+    document
+      .querySelector(".is-current-page")
+      ?.classList.remove("is-current-page");
+    document
+      .querySelector(`.navbar-item[href='${$navigating.to?.url.pathname}']`)
+      ?.classList.add("is-current-page");
+  }
 </script>
 
-<nav class="navbar is-fixed-top has-shadow" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a href="/" data-display="Jeremy Meadows" class="navbar-item">&nbsp;</a>
+<nav
+  id="navbar"
+  class="navbar is-fixed-top has-shadow"
+  aria-label="main navigation"
+>
+  <div class="navbar-brand">
+    <a href="/" class="navbar-item">Jeremy Meadows</a>
+    {#if !true}
+      <!-- prevents Svelte from optimizing out `.is-current-page` from the css since it's only set via script -->
+      <div class="is-current-page" hidden />
+    {/if}
 
-        <!-- svelte-ignore a11y-missing-attribute -->
-        <a
-            id="burger-menu"
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-        >
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-            <span aria-hidden="true" />
-        </a>
+    <a
+      id="burger-menu"
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbar-menu"
+    >
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+    </a>
+  </div>
+
+  <div id="navbar-menu" class="navbar-menu">
+    <div class="navbar-start">
+      <DarkMode />
     </div>
 
-    <div class="navbar-menu">
-        <div class="navbar-start" />
-
-        <div class="navbar-end">
-            <a href="/about" data-display="about_me" class="navbar-item"
-                >&nbsp;</a
-            >
-            <a href="/education" data-display="education" class="navbar-item"
-                >&nbsp;</a
-            >
-            <a href="/skills" data-display="skills" class="navbar-item"
-                >&nbsp;</a
-            >
-        </div>
+    <div class="navbar-end">
+      {#each Object.entries(pages) as [page, url]}
+        <a href={url} class="navbar-item">{page}</a>
+      {/each}
     </div>
+  </div>
 </nav>
 
-<div style="height: 86px" />
-
 <style lang="scss">
-    $navbar-breakpoint: 700px;
-    $navbar-item-hover-background-color: #0000;
-
-    @import '../../style.scss';
-
+  nav {
+    margin: -8px;
+    margin-bottom: 100%;
+    padding: 8px 8px 0 8px;
+  }
+  @media (min-width: 1200px) {
     nav {
-        margin: -8px;
-        padding: 8px 8px 0 8px;
+      padding-left: calc((100vw - 1200px) / 2);
+      padding-right: calc((100vw - 1200px) / 2);
     }
-    @media (min-width: 1200px) {
-        nav {
-            padding-left: calc((100vw - 1200px) / 2);
-            padding-right: calc((100vw - 1200px) / 2);
-        }
-    }
+  }
 
-    .navbar-item {
-        color: $link;
-        font-family: 'Roboto Mono', monospace;
-    }
+  .navbar-item,
+  .navbar-item:hover,
+  .navbar-item:focus {
+    color: var(--green);
+    font-family: monospace;
+  }
+
+  .navbar-item::before,
+  .navbar-item::after {
+    content: "\a0";
+  }
+
+  .is-current-page::before,
+  .navbar-item:hover::before {
+    content: "[";
+  }
+
+  .is-current-page::after,
+  .navbar-item:hover::after {
+    content: "]";
+  }
+
+  .navbar-item:not(.is-current-page):hover::before,
+  .navbar-item:not(.is-current-page):hover::after {
+    color: var(--grey);
+  }
 </style>

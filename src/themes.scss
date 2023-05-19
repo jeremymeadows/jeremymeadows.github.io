@@ -1,0 +1,28 @@
+@import 'variables.scss';
+
+:root,
+html[theme='dark'] {
+  $green: #0f0;
+
+  --fg: #{$white};
+  --bg: #{$black};
+  --bg-alt: #{$black-lighter};
+  --green: #{$green};
+  --green-filter: #{color_filter($green)};
+  --grey: #{$grey};
+  --grey-filter: #{color_filter($grey)};
+  --grey-shaded: #{$grey-darker};
+}
+
+html[theme='light'] {
+  $green: #0a0;
+
+  --fg: #{$black};
+  --bg: #{$white};
+  --bg-alt: #{$white-darker};
+  --green: #{$green};
+  --green-filter: #{color_filter($green)};
+  // --grey: #{$grey};
+  // --grey-filter: #{color_filter($grey)};
+  --grey-shaded: #{$grey-lighter};
+}

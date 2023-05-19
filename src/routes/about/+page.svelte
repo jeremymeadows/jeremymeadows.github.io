@@ -1,9 +1,11 @@
-<h1>about_me</h1>
+<article>
+  <h1>~/about_me</h1>
 
-<div style="height: 32px" />
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut consequat semper viverra nam libero justo laoreet. Odio pellentesque diam volutpat commodo sed egestas. Et pharetra pharetra massa massa ultricies mi quis hendrerit. A diam maecenas sed enim. Scelerisque in dictum non consectetur. Et ultrices neque ornare aenean euismod. Tincidunt dui ut ornare lectus sit amet est placerat. Sed tempus urna et pharetra pharetra massa massa. Ut ornare lectus sit amet est placerat in egestas erat. Faucibus in ornare quam viverra orci. Netus et malesuada fames ac. Dignissim cras tincidunt lobortis feugiat vivamus at.</p>
-
-<style lang="scss">
-    @import '../../style.scss';
-</style>
+  <p>
+    I enjoy spending time in the outdoors, specifically hiking. I grew up with
+    the Rocky Mountains in Colorado, and now I get to explore the Cooley range
+    in Louth. I also used to compete in 5k/10ks, and continue to run and work
+    out for the social and fitness aspects. In my free time, I enjoy board game
+    nights, solving programming puzzles, and playing video games.
+  </p>
+</article>
