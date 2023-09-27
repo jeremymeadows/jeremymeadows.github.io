@@ -11,37 +11,38 @@
     projects: "/projects",
   };
 
-  onMount(async () => {
+  function toggle_menu() {
     const menu = document.getElementById("burger-menu")!;
-    menu.addEventListener("click", () => {
-      menu.classList.toggle("is-active");
-      document
-        .getElementById(menu.getAttribute("data-target")!)!
-        .classList.toggle("is-active");
-    });
-
+    menu.classList.toggle("is-active");
     document
-      .querySelector(`.navbar-item[href='${document.location.pathname}']`)
+      .getElementById(menu.getAttribute("data-target")!)!
+      .classList.toggle("is-active");
+  }
+
+  onMount(async () => {
+    document
+      .querySelector(`.navbar-item[href="${document.location.pathname}"]`)
       ?.classList.add("is-current-page");
   });
 
   $: if ($navigating) {
+    toggle_menu();
     document
       .querySelector(".is-current-page")
       ?.classList.remove("is-current-page");
     document
-      .querySelector(`.navbar-item[href='${$navigating.to?.url.pathname}']`)
+      .querySelector(`.navbar-item[href="${$navigating.to?.url.pathname}"]`)
       ?.classList.add("is-current-page");
   }
 </script>
 
 <nav
-  id="navbar"
   class="navbar is-fixed-top has-shadow"
   aria-label="main navigation"
 >
   <div class="navbar-brand">
     <a href="/" class="navbar-item">Jeremy Meadows</a>
+    <DarkMode />
     {#if !true}
       <!-- prevents Svelte from optimizing out `.is-current-page` from the css since it's only set via script -->
       <div class="is-current-page" hidden />
@@ -54,6 +55,9 @@
       aria-label="menu"
       aria-expanded="false"
       data-target="navbar-menu"
+      tabindex="0"
+      on:click={toggle_menu}
+      on:keypress={toggle_menu}
     >
       <span aria-hidden="true" />
       <span aria-hidden="true" />
@@ -62,9 +66,7 @@
   </div>
 
   <div id="navbar-menu" class="navbar-menu">
-    <div class="navbar-start">
-      <DarkMode />
-    </div>
+    <div class="navbar-start" />
 
     <div class="navbar-end">
       {#each Object.entries(pages) as [page, url]}
@@ -75,16 +77,22 @@
 </nav>
 
 <style lang="scss">
-  nav {
+  nav.navbar {
     margin: -8px;
     margin-bottom: 100%;
     padding: 8px 8px 0 8px;
+    background-color: var(--bg);
+    box-shadow: 0 2px 0 0 var(--bg-alt);
   }
   @media (min-width: 1200px) {
     nav {
       padding-left: calc((100vw - 1200px) / 2);
       padding-right: calc((100vw - 1200px) / 2);
     }
+  }
+
+  .navbar-menu {
+    background-color: var(--bg);
   }
 
   .navbar-item,
