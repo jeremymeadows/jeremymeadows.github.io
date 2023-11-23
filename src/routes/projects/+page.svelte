@@ -2,7 +2,22 @@
   <h1>~/projects</h1>
 
   <section>
-    <h2><em>/* todo */</em></h2>
+    <h2>
+      Case Management System
+      <a href="https://github.com/jeremymeadows/casemanager" target="_blank" data-tooltip="Repo">
+        <i class="bx bx-sm bxl-git" />
+      </a>
+      <a href="https://casemanager.jeremymeadows.dev" target="_blank" data-tooltip="Live Demo">
+        <i class="bx bx-sm bx-test-tube" />
+      </a>
+    </h2>
+    <p>
+      A multi-user system that can track incoming cases/tasks. Give a case a type to keep them organized, and assign
+      them to users to complete and mark as closed. Search, filter, and sort existing cases. View statistics in a
+      dashboard, and export customized views into a CSV for Excel.
+    </p>
+  </section>
+  <!-- <section> -->
   <!--   <h2> -->
   <!--     "Roll Your Own Crypto" -->
   <!--     <a href="https://github.com/jeremymeadows/totp/" target="_blank" data-tooltip="TOTP"> -->
