@@ -12,6 +12,7 @@
       target="_blank"
       class="button is-outlined"
       data-tooltip="GitHub"
+      aria-label="GitHub"
     >
       <i class="bx bx-sm bxl-github" />
     </a>
@@ -20,6 +21,7 @@
       target="_blank"
       class="button is-outlined"
       data-tooltip="Stack Overflow"
+      aria-label="Stack Overflow"
     >
       <i class="bx bx-sm bxl-stack-overflow" />
     </a>
@@ -28,6 +30,7 @@
       target="_blank"
       class="button is-outlined"
       data-tooltip="LinkedIn"
+      aria-label="LinkedIn"
     >
       <i class="bx bx-sm bxl-linkedin-square" />
     </a>
@@ -36,6 +39,7 @@
       target="_blank"
       class="button is-outlined"
       data-tooltip="Resume"
+      aria-label="Resume"
     >
       <i class="bx bx-sm bxs-file-pdf" />
     </a>

@@ -1,5 +1,5 @@
 import adapter from "@sveltejs/adapter-static";
-import process from "svelte-preprocess";
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +8,7 @@ const config = {
   },
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
-  preprocess: process(),
+  preprocess: vitePreprocess(),
 };
 
 export default config;

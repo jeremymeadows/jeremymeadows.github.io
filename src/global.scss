@@ -1,17 +1,17 @@
-@import "themes.scss";
+@use "themes.scss" as *;
 
-@import "bulma/bulma.sass";
+@use "bulma" as *;
 @import "boxicons/css/boxicons.min.css";
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-html {
-  background-color: var(--bg);
-  font-family: "Poppins", sans-serif;
+:root {
   font-size: 18px;
+  background-color: var(--bg);
 }
 
 body {
+  font-family: "Poppins";
   color: var(--fg);
   margin: auto;
   padding: 0 5% 0 5%;
@@ -94,12 +94,22 @@ h3 span::before {
 }
 
 a,
-a:focus {
+a.button.is-outlined {
   color: var(--green);
+  text-decoration: none;
 }
 
-a:hover {
-  color: var(--grey);
+a.button.is-outlined,
+a.button.is-outlined:focus {
+  border-color: var(--green);
+  border-radius: 4px;
+  border-width: 1px;
+  padding: calc(0.5rem - 1px) .5rem;
+}
+
+main a:hover,
+a.button.is-outlined:hover {
+  color: var(--white);
 }
 
 a[href^="http"][target="_blank"] {

@@ -25,30 +25,29 @@
 </button>
 
 <style lang="scss">
-  @import "bulma/sass/utilities/initial-variables.sass";
-  @import "bulma/sass/utilities/functions.sass";
+  @use "/src/variables.scss" as *;
 
   #toggle-dark-mode {
-    margin-top: 0.4em;
+    margin-left: -0.4rem;
     background: none;
     border: none;
   }
 
   button:has(i.bxs-sun),
   button:has(i.bxs-sun):focus {
-    color: $yellow;
+    color: #ffe08a;
   }
 
   button:has(i.bxs-sun):hover {
-    color: findDarkColor($yellow);
+    color: #946c00;
   }
 
   button:has(i.bxs-moon),
   button:has(i.bxs-moon):focus {
-    color: $purple;
+    color: #6700c7;
   }
 
   button:has(i.bxs-moon):hover {
-    color: findDarkColor($purple);
+    color: #6700c7;
   }
 </style>

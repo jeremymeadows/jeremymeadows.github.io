@@ -95,11 +95,16 @@
     background-color: var(--bg);
   }
 
-  .navbar-item,
-  .navbar-item:hover,
-  .navbar-item:focus {
+  .navbar-item {
     color: var(--green);
     font-family: monospace;
+    padding: 0.5rem, 0.75rem;
+    gap: 0;
+  }
+
+  .navbar-item:hover,
+  .navbar-item:focus {
+    background: none;
   }
 
   .navbar-item::before,
