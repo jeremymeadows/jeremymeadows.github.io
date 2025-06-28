@@ -7,7 +7,7 @@
       <a href="https://github.com/jeremymeadows/casemanager" target="_blank" data-tooltip="Repo">
         <i class="bx bx-sm bxl-git" />
       </a>
-      <a href="https://casemanager.jeremymeadows.dev" target="_blank" data-tooltip="Live Demo">
+      <a href="https://casemanager.jeremymeadows.dev" target="_blank" data-tooltip="Demo">
         <i class="bx bx-sm bx-test-tube" />
       </a>
     </h2>
@@ -17,6 +17,23 @@
       dashboard, and export customized views into a CSV for Excel.
     </p>
   </section>
+
+  <section>
+    <h2>
+      Soulstone Builds
+      <a href="https://github.com/jeremymeadows/soulstone-builds" target="_blank" data-tooltip="Repo">
+        <i class="bx bx-sm bxl-git" />
+      </a>
+      <a href="https://soulstonebuilds.jeremymeadows.dev" target="_blank" data-tooltip="Link">
+        <i class="bx bx-sm bx-link" />
+      </a>
+    </h2>
+    <p>
+      Simple website to allow creating and sharing your best builds from Soulstone Survivors!
+      Browse new builds and try them out in game.
+    </p>
+  </section>
+
   <!-- <section> -->
   <!--   <h2> -->
   <!--     "Roll Your Own Crypto" -->

@@ -6,7 +6,7 @@
       <label class="collapse-title">
         <input type="checkbox" />
         <h2>Dundalk Institute of Technology Student Union</h2>
-        <h3>Full-Stack Web Development<span>May - July 2023</span></h3>
+        <h3>Full-Stack Web Development<span>May - December 2023</span></h3>
       </label>
 
       <div class="collapse-content">
@@ -55,7 +55,7 @@
       <label class="collapse-title">
         <input type="checkbox" />
         <h2>Texas Farm Bureau Insurance Company</h2>
-        <h3>DevOps & Testing Automation<span>May 2021 - August 2023</span></h3>
+        <h3>DevOps & Testing Automation<span>May 2021 - August 2022</span></h3>
       </label>
       <div class="collapse-content">
         <ul>
